@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="TestingAPI" type="Application" factoryName="Application">
+    <envs>
+      <env name="SearchApiKey" value="k5gEqkkjCUPQxTckoDhgqpgC" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.anakie.TestingAPI.TestingApiApplication" />
+    <module name="TestingAPI" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
