@@ -1,11 +1,25 @@
 package com.anakie.TestingAPI.model.googleModel;
 
-public class Installment {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-    public String down_payment;
-    public int extracted_down_payment;
-    public String months;
-    public int extracted_months;
-    public String cost_per_month;
-    public double extracted_cost_per_moth;
+public class Installment {
+    @JsonProperty("down_payment")
+    private String downPayment;
+
+    @JsonProperty("extracted_down_payment")
+    private int extractedDownPayment;
+
+    @JsonProperty("months")
+    private String months;
+
+    @JsonProperty("extracted_months")
+    private int extractedMonths;
+
+    @JsonProperty("cost_per_month")
+    private String costPerMonth;
+
+    @JsonProperty("extracted_cost_per_month")
+    private double extractedCostPerMonth;
+
+    // Constructors, getters, and setters
 }

@@ -21,7 +21,7 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-@RequestMapping("/googleImageSearch")
+@RequestMapping("apiTesting/googleImageSearch")
 public class GoogleImageSearch {
     @Value("${searchApi.google.apikey}")
     private String apiKey;
@@ -50,6 +50,7 @@ public class GoogleImageSearch {
                     .GET()
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
 
             log.info(response.body());
             return new ResponseEntity<>(new ObjectMapper().registerModule(new JavaTimeModule()).readValue(response.body(), Result.class), HttpStatus.valueOf(response.statusCode()));

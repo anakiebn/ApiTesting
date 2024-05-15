@@ -1,28 +1,30 @@
 package com.anakie.TestingAPI.model.googleModel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 public class Result {
 
     @JsonProperty
-    public SearchMetadata search_metadata;
+    private SearchMetadata search_metadata;
 
     @JsonProperty
-    public SearchParameters search_parameters;
+    private SearchParameters search_parameters;
 
     @JsonProperty
-    public SearchInformation search_information;
+    private SearchInformation search_information;
 
     @JsonProperty
-    public List<Suggestion> suggestions;
+    private List<Suggestion> suggestions;
 
     @JsonProperty
-    public List<Image> images;
+    private List<Image> images;
 
     @JsonProperty
-    public List<ShoppingAd> shopping_ads;
+    private List<ShoppingAd> shopping_ads;
     @JsonProperty
-    public List<RelatedSearch> related_searches;
+    private List<RelatedSearch> related_searches;
 }

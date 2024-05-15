@@ -1,7 +1,10 @@
 package com.anakie.TestingAPI.model.googleModel;
 
+import lombok.Data;
+
+@Data
 public class Original {
-    public String link;
-    public int width;
-    public int height;
+    private String link;
+    private int width;
+    private int height;
 }

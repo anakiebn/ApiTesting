@@ -1,6 +1,10 @@
 package com.anakie.TestingAPI.model.googleModel;
 
+
+import lombok.Data;
+
+@Data
 public class Source {
-    public String name;
-    public String link;
+    private String name;
+    private String link;
 }

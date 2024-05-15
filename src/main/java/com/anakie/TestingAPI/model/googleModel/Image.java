@@ -1,13 +1,24 @@
 package com.anakie.TestingAPI.model.googleModel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Image {
 
 
-        public int position;
-        public String title;
-        public Source source;
-        public Original original;
-        public String thumbnail;
+        @JsonProperty("position")
+        private int position;
+
+        @JsonProperty("title")
+        private String title;
+
+        @JsonProperty("source")
+        private Source source;
+
+        @JsonProperty("original")
+        private Original original;
+
+        @JsonProperty("thumbnail")
+        private String thumbnail;
 
 
 }

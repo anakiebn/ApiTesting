@@ -1,8 +1,11 @@
 package com.anakie.TestingAPI.model.googleModel;
 
+import lombok.Data;
+
+@Data
 public class Suggestion{
-    public String title;
-    public String chips;
-    public String link;
-    public String thumbnail;
+    private String title;
+    private String chips;
+    private String link;
+    private String thumbnail;
 }

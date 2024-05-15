@@ -1,16 +1,37 @@
 package com.anakie.TestingAPI.model.googleModel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
 import java.time.LocalDate;
 
+@Data
 public class SearchMetadata {
 
-    public String id;
-    public String status;
-    public LocalDate created_at;
-    public double request_time_taken;
-    public double parsing_time_taken;
-    public double total_time_taken;
-    public String request_url;
-    public String html_url;
-    public String json_url;
+    @JsonProperty("id")
+    private String id;
+
+    @JsonProperty("status")
+    private String status;
+
+    @JsonProperty("created_at")
+    private LocalDate createdAt;
+
+    @JsonProperty("request_time_taken")
+    private double requestTimeTaken;
+
+    @JsonProperty("parsing_time_taken")
+    private double parsingTimeTaken;
+
+    @JsonProperty("total_time_taken")
+    private double totalTimeTaken;
+
+    @JsonProperty("request_url")
+    private String requestUrl;
+
+    @JsonProperty("html_url")
+    private String htmlUrl;
+
+    @JsonProperty("json_url")
+    private String jsonUrl;
 }

@@ -1,14 +1,17 @@
 package com.anakie.TestingAPI.model.googleModel;
 
+import lombok.Data;
+
+@Data
 public class ShoppingAd {
 
-    public int position;
-    public String title;
-    public String price;
-    public int extracted_price;
-    public String link;
-    public String seller;
-    public String delivery;
-    public Installment installment;
-    public String thumbnail;
+    private int position;
+    private String title;
+    private String price;
+    private int extracted_price;
+    private String link;
+    private String seller;
+    private String delivery;
+    private Installment installment;
+    private String thumbnail;
 }

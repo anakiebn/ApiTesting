@@ -2,26 +2,41 @@ package com.anakie.TestingAPI.model.googleModel;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
 @JsonInclude(JsonInclude.Include.ALWAYS)
+@Data
 public class SearchParameters {
+    @JsonProperty("q")
+    private String q;
 
-    public String q;
+    @JsonProperty("gl")
+    private String gl;
 
-    public String gl;
+    @JsonProperty("nfpr")
+    private String nfpr;
 
-    public String nfpr;
+    @JsonProperty("safe")
+    private String safe;
 
-    public String safe;
-    public String engine;
+    @JsonProperty("engine")
+    private String engine;
 
+    @JsonProperty("uule")
+    private String uule;
 
-    public String uule;
-    public String location;
-    public String location_used;
-    public String google_domain;
-    public String hl;
+    @JsonProperty("location")
+    private String location;
 
-    public String device;
+    @JsonProperty("location_used")
+    private String locationUsed;
 
+    @JsonProperty("google_domain")
+    private String googleDomain;
+
+    @JsonProperty("hl")
+    private String hl;
+
+    @JsonProperty("device")
+    private String device;
 }

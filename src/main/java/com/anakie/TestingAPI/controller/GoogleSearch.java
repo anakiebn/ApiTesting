@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/googleSearch")
+@RequestMapping("apiTesting/googleSearch")
 public class GoogleSearch {
 
     {
