@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -21,10 +22,12 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-@RequestMapping("apiTesting/googleImageSearch")
+@RequestMapping("/apiTesting/googleImageSearch")
 public class GoogleImageSearch {
     @Value("${searchApi.google.apikey}")
     private String apiKey;
+
+    String path="/controller/txt";
 
     @GetMapping("/{query}")
     public ResponseEntity<Result> result(@PathVariable String query) {
@@ -44,13 +47,11 @@ public class GoogleImageSearch {
 
             log.info(generateURI(parameters).toString());
 
-
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(generateURI(parameters))
                     .GET()
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
 
             log.info(response.body());
             return new ResponseEntity<>(new ObjectMapper().registerModule(new JavaTimeModule()).readValue(response.body(), Result.class), HttpStatus.valueOf(response.statusCode()));
@@ -59,7 +60,6 @@ public class GoogleImageSearch {
         }
 
     }
-
 
     private URI generateURI(Map<String, String> parameters) throws URISyntaxException {
 
