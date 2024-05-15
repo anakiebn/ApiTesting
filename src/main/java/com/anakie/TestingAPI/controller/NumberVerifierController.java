@@ -1,5 +1,6 @@
 package com.anakie.TestingAPI.controller;
 
+import com.anakie.TestingAPI.model.URIGenerator;
 import com.anakie.TestingAPI.model.numberVerifierModel.CellNumber;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +25,9 @@ import java.net.http.HttpResponse;
 @Slf4j
 @RestController
 @RequestMapping("apiTesting/verify")
-public class NumberVerifierController {
+public class NumberVerifierController implements URIGenerator {
+    @Value("${apiLayer.baseURI}")
+    private String baseURI;
 
     @Value("${apiLayer.access_key}")
     private String access;
@@ -43,9 +46,8 @@ public class NumberVerifierController {
         HttpClient client = HttpClient.newHttpClient();
         String message = null;
 
-        String uri = "http://apilayer.net/api/validate?access_key=" +
+        String uri = baseURI+"?access_key=" +
                 access + "&number=" + number + "&country_code=za&format=1";
-
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(uri))

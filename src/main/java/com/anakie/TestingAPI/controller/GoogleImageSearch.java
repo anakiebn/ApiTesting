@@ -1,13 +1,16 @@
 package com.anakie.TestingAPI.controller;
 
 
+import com.anakie.TestingAPI.model.URIGenerator;
 import com.anakie.TestingAPI.model.googleModel.Result;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -22,33 +25,31 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-@RequestMapping("/apiTesting/googleImageSearch")
-public class GoogleImageSearch {
+@RequestMapping("/apiTest/googleImageSearch")
+public class GoogleImageSearch implements URIGenerator {
     @Value("${searchApi.google.apikey}")
     private String apiKey;
-
-    String path="/controller/txt";
+    @Value("${searchAPI.googleImage.baseURI}")
+    private String baseURI;
 
     @GetMapping("/{query}")
     public ResponseEntity<Result> result(@PathVariable String query) {
-
-
         Map<String, String> parameters = new HashMap<>();
-        parameters.put("api_key",apiKey);
-        parameters.put("q",query);
+
         parameters.put("ql","za");  // by default, I'm focused on south african content
         parameters.put("nfpr","1");  // set to 1, excludes autocorrected results
         parameters.put("safe","active"); // filter out adult content, enable safe browsing
         parameters.put("engine","google_images"); // image engine
-
+        parameters.put("api_key",apiKey);
+        parameters.put("q",query);
 
         HttpClient client=  HttpClient.newHttpClient();
         try {
 
-            log.info(generateURI(parameters).toString());
+            log.info(generateURI(parameters,baseURI).toString());
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(generateURI(parameters))
+                    .uri(generateURI(parameters,baseURI))
                     .GET()
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -61,23 +62,4 @@ public class GoogleImageSearch {
 
     }
 
-    private URI generateURI(Map<String, String> parameters) throws URISyntaxException {
-
-        StringBuilder generatedURI = new StringBuilder("https://www.searchapi.io/api/v1/search?");
-
-        int count = 0;
-        for (String name : parameters.keySet()) {
-            String value = parameters.get(name);
-
-            count++;
-
-            generatedURI.append(name).append("=").append(value);
-            if (count < parameters.size()) {
-                generatedURI.append("&");
-            }
-
-        }
-
-        return new URI(generatedURI.toString());
-    }
 }
