@@ -39,4 +39,7 @@ public class SearchParameters {
 
     @JsonProperty("device")
     private String device;
+
+    @JsonProperty("tbs")
+    private String tbs;
 }

@@ -8,7 +8,7 @@ public interface URIGenerator {
 
     public  default URI generateURI(Map<String, String> parameters,String baseURI) throws URISyntaxException {
 
-        StringBuilder generatedURI = new StringBuilder();
+        StringBuilder generatedURI = new StringBuilder(baseURI);
 
         int count = 0;
         for (String name : parameters.keySet()) {
