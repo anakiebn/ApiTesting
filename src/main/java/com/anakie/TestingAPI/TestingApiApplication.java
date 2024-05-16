@@ -16,7 +16,6 @@ import java.util.Map;
 
 @SpringBootApplication
 @Slf4j
-
 public class TestingApiApplication {
 
 	public static void main(String[] args) {

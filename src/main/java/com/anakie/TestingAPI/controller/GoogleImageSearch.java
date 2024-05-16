@@ -27,7 +27,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/apiTest/googleImageSearch")
 public class GoogleImageSearch implements URIGenerator {
-    @Value("${searchApi.google.apikey}")
+    @Value("${searchAPI.apikey}")
     private String apiKey;
     @Value("${searchAPI.googleImage.baseURI}")
     private String baseURI;
