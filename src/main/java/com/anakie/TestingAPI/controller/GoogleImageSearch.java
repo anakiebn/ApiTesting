@@ -29,7 +29,7 @@ import java.util.Map;
 public class GoogleImageSearch implements URIGenerator {
     @Value("${searchAPI.apikey}")
     private String apiKey;
-    @Value("${searchAPI.googleImage.baseURI}")
+    @Value("${searchAPI.baseURI}")
     private String baseURI;
 
     @GetMapping("/{query}")
@@ -42,6 +42,7 @@ public class GoogleImageSearch implements URIGenerator {
         parameters.put("engine","google_images"); // image engine
         parameters.put("api_key",apiKey);
         parameters.put("q",query);
+        parameters.put("tbs","itp:face"); // we focus on faces.
 
         HttpClient client=  HttpClient.newHttpClient();
         try {
