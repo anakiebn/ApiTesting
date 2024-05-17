@@ -6,6 +6,7 @@
     </envs>
     <option name="MAIN_CLASS_NAME" value="com.anakie.TestingAPI.TestingApiApplication" />
     <module name="TestingAPI" />
+    <option name="PROGRAM_PARAMETERS" value="anakie mamba" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

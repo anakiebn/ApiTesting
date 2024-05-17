@@ -36,7 +36,7 @@ public class YoutubeTranscriptController implements URIGenerator {
 
 
     @GetMapping("/{video_id}")
-    public ResponseEntity<Result> getTranscript(@PathVariable String video_id){
+    public ResponseEntity<Result> getTranscript(@PathVariable String video_id) throws URISyntaxException, IOException, InterruptedException {
 
         HttpClient client=HttpClient.newHttpClient();
         Map<String, String> parameters=new HashMap<>();
@@ -46,16 +46,13 @@ public class YoutubeTranscriptController implements URIGenerator {
         parameters.put("lang","en");
         parameters.put("video_id",video_id);
 
-        try {
+
             HttpRequest request=HttpRequest.newBuilder()
                     .GET().uri(generateURI(parameters,baseURI)).build();
             HttpResponse<String> response=client.send(request,HttpResponse.BodyHandlers.ofString());
             log.info(response.body());
             return new ResponseEntity<>(new ObjectMapper().registerModule(new JavaTimeModule()).readValue(response.body(),Result.class),HttpStatusCode.valueOf(response.statusCode()));
-        } catch (URISyntaxException | IOException | InterruptedException e) {
-            log.error("Exception "+e.getMessage());
-            throw new RuntimeException(Arrays.toString(e.getStackTrace()));
-        }
+
 
     }
 

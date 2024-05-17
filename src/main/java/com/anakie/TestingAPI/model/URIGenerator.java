@@ -1,8 +1,11 @@
 package com.anakie.TestingAPI.model;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Map;
+
 
 public interface URIGenerator {
 
@@ -23,6 +26,7 @@ public interface URIGenerator {
 
         }
 
+        System.out.printf("URI Generated; %s",generatedURI);
         return new URI(generatedURI.toString());
     }
 }

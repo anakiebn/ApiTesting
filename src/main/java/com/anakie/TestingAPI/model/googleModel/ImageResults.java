@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class Result {
+public class ImageResults {
 
     @JsonProperty
     private SearchMetadata search_metadata;
