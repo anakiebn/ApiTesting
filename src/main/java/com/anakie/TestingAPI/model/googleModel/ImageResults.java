@@ -12,6 +12,9 @@ public class ImageResults {
     private SearchMetadata search_metadata;
 
     @JsonProperty
+    private String error;
+
+    @JsonProperty
     private SearchParameters search_parameters;
 
     @JsonProperty

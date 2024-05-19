@@ -10,7 +10,6 @@ import java.io.IOException;
 @Slf4j
 public class TestingApiApplication {
 
-	final static String GENDER = "MALE";
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 

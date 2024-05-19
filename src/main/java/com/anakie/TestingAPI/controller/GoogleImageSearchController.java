@@ -1,9 +1,7 @@
 package com.anakie.TestingAPI.controller;
 
-
 import com.anakie.TestingAPI.model.URIGenerator;
 import com.anakie.TestingAPI.model.googleModel.ImageResults;
-import com.anakie.TestingAPI.model.googleModel.NewsResults;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +32,7 @@ public class GoogleImageSearchController implements URIGenerator {
         Map<String, String> parameters = new HashMap<>();
 
         parameters.put("ql","za");  // by default, I'm focused on south african content
-        parameters.put("nfpr","1");  // set to 1, excludes autocorrected results
+//        parameters.put("nfpr","1");  // set to 1, excludes autocorrected results
         parameters.put("safe","active"); // filter out adult content, enable safe browsing
         parameters.put("engine","google_images"); // image engine
         parameters.put("api_key",apiKey);

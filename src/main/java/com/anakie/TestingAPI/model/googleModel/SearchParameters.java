@@ -9,7 +9,8 @@ import lombok.Data;
 public class SearchParameters {
     @JsonProperty("q")
     private String q;
-
+    @JsonProperty("country")
+    private String country;
     @JsonProperty("as_dt")
     private String as_dt;
 

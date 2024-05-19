@@ -1,7 +1,5 @@
 package com.anakie.TestingAPI.model;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Map;
@@ -9,7 +7,7 @@ import java.util.Map;
 
 public interface URIGenerator {
 
-    public  default URI generateURI(Map<String, String> parameters,String baseURI) throws URISyntaxException {
+  default URI generateURI(Map<String, String> parameters,String baseURI) throws URISyntaxException {
 
         StringBuilder generatedURI = new StringBuilder(baseURI);
 
