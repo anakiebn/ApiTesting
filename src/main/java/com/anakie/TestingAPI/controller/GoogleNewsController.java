@@ -32,11 +32,11 @@ public class GoogleNewsController implements URIGenerator {
     @Value("${searchAPI.baseURI}")
     private String baseURI;
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<NewsResults> getNews() throws URISyntaxException, IOException, InterruptedException {
         DateTimeFormatter format=DateTimeFormatter.ofPattern("MM/dd/yyyy");
         Map<String, String> parameters = new HashMap<>();
-        parameters.put("api_key",apiKey);
+        parameters.put("api_key",apiKey.trim());
         parameters.put("q","South+African+news");
         parameters.put("google_domain","google.co.za"); // focuses on south african content
         parameters.put("engine","google_news");
@@ -48,7 +48,7 @@ public class GoogleNewsController implements URIGenerator {
         parameters.put("time_period_max",LocalDate.now().format(format));
 
             HttpClient client= HttpClient.newHttpClient();
-            HttpRequest request= HttpRequest.newBuilder().GET().uri(generateURI(parameters,baseURI)).build();
+            HttpRequest request= HttpRequest.newBuilder().GET().uri(generateURI(parameters,baseURI.trim())).build();
 
             HttpResponse<String> response=client.send(request,HttpResponse.BodyHandlers.ofString());
             log.info(response.body());
