@@ -2,7 +2,7 @@
   <configuration default="false" name="TestingAPI" type="Application" factoryName="Application">
     <envs>
       <env name="SearchApiKey" value="k5gEqkkjCUPQxTckoDhgqpgC" />
-      <env name="access_key" value="c575cd0599ab61233ddb572126c9176e" />
+      <env name="access_key" value="a8WAvJ4LmDe3ZiQpreziUJD0l5c057hn" />
     </envs>
     <option name="MAIN_CLASS_NAME" value="com.anakie.TestingAPI.TestingApiApplication" />
     <module name="TestingAPI" />

@@ -18,4 +18,6 @@ public class CellNumber {
     private String location;
     private String carrier;
     private String line_type;
+
+
 }

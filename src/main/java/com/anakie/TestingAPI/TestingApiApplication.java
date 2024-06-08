@@ -12,7 +12,6 @@ public class TestingApiApplication {
 
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-
 		SpringApplication.run(TestingApiApplication.class, args);
 	}
 }

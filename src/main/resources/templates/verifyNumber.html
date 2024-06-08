@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Verifier</title>
+</head>
+<body>
+<h1>Number Verifier</h1>
+<form th:action="@{/numberVerifier/checkNumber}" method="post">
+    <label for="number">Number:</label>
+    <input type="text" id="number" name="number" minlength="10" maxlength="10"/>
+    <button type="submit">Check</button>
+
+    <div th:if="${displayInfo}" th:object="${cellNumber}">
+        <br><br>
+        <div>Number: <span th:text="*{number}"></span></div>
+        <div>Local format: <span th:text="*{local_format}"></span></div>
+        <div>International format: <span th:text="*{international_format}"></span></div>
+        <div>Country prefix: <span th:text="*{country_prefix}"></span></div>
+        <div>Country code: <span th:text="*{country_code}"></span></div>
+        <div>Country name: <span th:text="*{country_name}"></span></div>
+        <div>Location: <span th:text="*{location}"></span></div>
+        <div>Carrier: <span th:text="*{carrier}"></span></div>
+        <div>Line type: <span th:text="*{line_type}"></span></div>
+    </div>
+</form>
+</body>
+</html>

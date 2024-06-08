@@ -32,7 +32,7 @@ public class NumberVerifierController implements URIGenerator {
     @GetMapping("/{number}")
     public ResponseEntity<CellNumber> verifyNumber(@PathVariable String number) {
 
-
+        System.out.println("access: "+access);
         long validNumber = 0;
         try {
             validNumber = number.startsWith("+27") ? Long.parseLong("0" + number.substring(3)) : Long.parseLong(number);
