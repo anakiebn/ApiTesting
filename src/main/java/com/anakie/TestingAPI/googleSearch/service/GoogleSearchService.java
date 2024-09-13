@@ -1,4 +1,4 @@
-package com.anakie.TestingAPI.backend.googleSearch.service;
+package com.anakie.TestingAPI.googleSearch.service;
 
 public interface GoogleSearchService {
 }

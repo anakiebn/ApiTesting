@@ -1,5 +1,8 @@
-package com.anakie.TestingAPI.backend.googleSearch.model.numberVerifierModel;
+package com.anakie.TestingAPI.googleSearch.model.numberVerifierModel;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 

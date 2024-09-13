@@ -1,4 +1,4 @@
-package com.anakie.TestingAPI.backend.googleSearch.exception;
+package com.anakie.TestingAPI.googleSearch.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

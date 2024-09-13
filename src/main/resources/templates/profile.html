@@ -2,11 +2,43 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Image Gallery</title>
+    <style>
+        .image-container {
+            display: flex;
+            align-items: center;
+        }
+        .image {
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+        }
+        .info {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
-<h1>Image Gallery</h1>
-<div th:each="image : ${data}">
-    <img th:src="${image}" style="width: 200px; height: 200px; margin: 10px;" alt="">
-</div>
+<form th:action="@{/profile/search}" method="post">
+    <label for="name">Search for:</label>
+    <input type="text" id="name" name="name"/>
+    <button type="submit">Search</button>
+
+<h1>Possible match</h1>
+    <div th:if="${available}">
+        <div th:each="item : ${data}">
+            <div class="image-container">
+                <img class="image" th:src="${item.thumbnail}" alt="">
+                <div class="info">
+                    <p>Source: <span th:text="${item.source.name}"></span></p>
+                    <p>Link: <span th:href="@{item.source.link}"></span></p>
+
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+</form>
+
 </body>
 </html>

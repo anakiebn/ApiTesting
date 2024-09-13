@@ -1,7 +1,7 @@
-package com.anakie.TestingAPI.backend.googleSearch.controller;
+package com.anakie.TestingAPI.googleSearch.controller;
 
-import com.anakie.TestingAPI.backend.googleSearch.model.URIGenerator;
-import com.anakie.TestingAPI.backend.googleSearch.model.numberVerifierModel.CellNumber;
+import com.anakie.TestingAPI.googleSearch.model.URIGenerator;
+import com.anakie.TestingAPI.googleSearch.model.numberVerifierModel.CellNumber;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,9 +1,9 @@
-package com.anakie.TestingAPI.backend.googleSearch.controller;
+package com.anakie.TestingAPI.googleSearch.controller;
 
 
-import com.anakie.TestingAPI.backend.googleSearch.service.GoogleSearchServiceImpl;
-import com.anakie.TestingAPI.backend.googleSearch.model.Result;
-import com.anakie.TestingAPI.backend.googleSearch.model.URIGenerator;
+import com.anakie.TestingAPI.googleSearch.model.Result;
+import com.anakie.TestingAPI.googleSearch.model.URIGenerator;
+import com.anakie.TestingAPI.googleSearch.service.GoogleSearchServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;

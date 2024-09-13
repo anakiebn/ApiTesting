@@ -1,6 +1,6 @@
-package com.anakie.TestingAPI.backend.googleSearch.youtube.service;
+package com.anakie.TestingAPI.googleSearch.youtube.service;
 
-import com.anakie.TestingAPI.backend.googleSearch.model.youtubeModel.Transcript;
+import com.anakie.TestingAPI.googleSearch.model.youtubeModel.Transcript;
 
 import java.util.List;
 
