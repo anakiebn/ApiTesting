@@ -1,4 +1,4 @@
-package com.anakie.TestingAPI.googleSearch.exception;
+package com.anakie.TestingAPI.backend.googleSearch.exception;
 
 
 import lombok.AllArgsConstructor;

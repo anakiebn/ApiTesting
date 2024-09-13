@@ -1,4 +1,4 @@
-package com.anakie.TestingAPI.googleSearch.model.youtubeModel;
+package com.anakie.TestingAPI.backend.googleSearch.model.youtubeModel;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

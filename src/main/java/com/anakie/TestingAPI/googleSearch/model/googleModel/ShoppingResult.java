@@ -1,4 +1,4 @@
-package com.anakie.TestingAPI.googleSearch.model.googleModel;
+package com.anakie.TestingAPI.backend.googleSearch.model.googleModel;
 
 public class ShoppingResult{
     public String source;

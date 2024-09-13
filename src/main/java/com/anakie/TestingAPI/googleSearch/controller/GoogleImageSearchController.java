@@ -1,7 +1,7 @@
-package com.anakie.TestingAPI.googleSearch.controller;
+package com.anakie.TestingAPI.backend.googleSearch.controller;
 
-import com.anakie.TestingAPI.googleSearch.model.URIGenerator;
-import com.anakie.TestingAPI.googleSearch.model.googleModel.ImageResults;
+import com.anakie.TestingAPI.backend.googleSearch.model.URIGenerator;
+import com.anakie.TestingAPI.backend.googleSearch.model.googleModel.ImageResults;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
@@ -32,8 +32,8 @@ public class GoogleImageSearchController implements URIGenerator {
     @GetMapping("/{query}")
     public ResponseEntity<ImageResults> getImages(@PathVariable String query) throws URISyntaxException, IOException, InterruptedException {
         Map<String, String> parameters = new HashMap<>();
-
-        String rawQuery = "\"" + query + "\" (site:linkedin.com OR site:twitter.com OR site:facebook.com OR site:youtube.com OR site:instagram.com OR site:tiktok.com OR site:snapchat.com OR site:pinterest.com OR site:reddit.com OR site:tumblr.com OR site:whatsapp.com OR site:wechat.com OR site:telegram.org OR site:skype.com OR site:discord.com) -city -town -state -restaurant -hotel";
+//        (site:linkedin.com OR site:twitter.com OR site:facebook.com OR site:youtube.com OR site:instagram.com OR site:tiktok.com OR site:snapchat.com OR site:pinterest.com OR site:reddit.com OR site:tumblr.com OR site:whatsapp.com OR site:wechat.com OR site:telegram.org OR site:skype.com OR site:discord.com OR site:google.com)
+        String rawQuery = "+"+query+"-city -town -state -restaurant -hotel"; //-city -town -state -restaurant -hotel
 
         // URL-encode the query string
         String encodedQuery = URLEncoder.encode(rawQuery, StandardCharsets.UTF_8);

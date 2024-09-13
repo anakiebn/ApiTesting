@@ -1,6 +1,6 @@
-package com.anakie.TestingAPI.googleSearch.youtube.service;
+package com.anakie.TestingAPI.backend.googleSearch.youtube.service;
 
-import com.anakie.TestingAPI.googleSearch.model.youtubeModel.Transcript;
+import com.anakie.TestingAPI.backend.googleSearch.model.youtubeModel.Transcript;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +14,7 @@ public class YoutubeTranslatorServiceImpl implements YoutubeTranslatorService{
     public String getFullVideoText(List<Transcript> transcriptList) {
         return transcriptList.stream().map(transcript -> transcript.text).collect(Collectors.joining(" "));
     }
+
 
     @Override
     public double getVideoDuration(List<Transcript> transcriptList) {

@@ -1,9 +1,9 @@
-package com.anakie.TestingAPI.googleSearch.controller;
+package com.anakie.TestingAPI.backend.googleSearch.controller;
 
 
-import com.anakie.TestingAPI.googleSearch.model.Result;
-import com.anakie.TestingAPI.googleSearch.model.URIGenerator;
-import com.anakie.TestingAPI.googleSearch.service.GoogleSearchServiceImpl;
+import com.anakie.TestingAPI.backend.googleSearch.service.GoogleSearchServiceImpl;
+import com.anakie.TestingAPI.backend.googleSearch.model.Result;
+import com.anakie.TestingAPI.backend.googleSearch.model.URIGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +47,7 @@ public class GoogleSearchController implements URIGenerator {
 
     @GetMapping("/{query}")
     public ResponseEntity<Result> getResult(@PathVariable String query) throws URISyntaxException, IOException, InterruptedException {
-        String rawQuery = "\"" + query + "\" (site:linkedin.com OR site:twitter.com OR site:facebook.com) -city -town -state -restaurant -hotel";
+        String rawQuery = "\"" + query + "\"  -city -town -state -restaurant -hotel";
 
         // URL-encode the query string
         String encodedQuery = URLEncoder.encode(rawQuery, StandardCharsets.UTF_8);

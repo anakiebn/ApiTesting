@@ -1,5 +1,10 @@
-package com.anakie.TestingAPI.googleSearch.model.numberVerifierModel;
+package com.anakie.TestingAPI.backend.googleSearch.model.numberVerifierModel;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Error {
 
     public int code;

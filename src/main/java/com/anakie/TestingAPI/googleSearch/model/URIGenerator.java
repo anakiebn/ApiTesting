@@ -1,4 +1,4 @@
-package com.anakie.TestingAPI.googleSearch.model;
+package com.anakie.TestingAPI.backend.googleSearch.model;
 
 import java.net.URI;
 import java.net.URISyntaxException;

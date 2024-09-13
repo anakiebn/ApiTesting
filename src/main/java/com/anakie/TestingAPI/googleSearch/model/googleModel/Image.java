@@ -1,4 +1,4 @@
-package com.anakie.TestingAPI.googleSearch.model.googleModel;
+package com.anakie.TestingAPI.backend.googleSearch.model.googleModel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
@@ -21,6 +21,8 @@ public class Image {
 
         @JsonProperty("thumbnail")
         private String thumbnail;
+
+
 
 
 }

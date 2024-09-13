@@ -1,7 +1,7 @@
-package com.anakie.TestingAPI.googleSearch.controller;
+package com.anakie.TestingAPI.backend.googleSearch.controller;
 
 
-import com.anakie.TestingAPI.googleSearch.model.URIGenerator;
+import com.anakie.TestingAPI.backend.googleSearch.model.URIGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.beans.factory.annotation.Value;
